@@ -1,17 +1,21 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Jadwal</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-card *ngFor="let item of schedule">
+    <ion-card-header>
+      <ion-card-subtitle>{{ item.day }}, {{ item.date }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Tempat : {{ item.place }}</p>
+      <p>Waktu : {{ item.time }}</p>
+      <ion-button expand="block" color="primary" [routerLink]="['/lapor-kegiatan']">Lapor Kegiatan</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
