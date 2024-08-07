@@ -124,28 +124,21 @@ ion-footer {
   font-weight: bold;
 }
 
-.popup-icon {
-  font-size: 50px;
-  color: #953233;
-  margin: 20px 0;
-}
-
 .popup-message {
   margin: 20px 0;
   color: #4b4b4b;
 }
 
-btn-selesai {
+.btn-simpan {
   background: linear-gradient(to right, #c73336, #953233);
   color: #ffffff;
+  margin-bottom: 10px;
 }
 
-ion-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+.btn-batal {
+  background: linear-gradient(to right, #c73336, #953233);
+  color: #ffffff;
+  margin-bottom: 10px;
 }
+
+

@@ -9,6 +9,7 @@ import { NavController } from '@ionic/angular';
 export class LaporKegiatanPage {
   files: any[] = [];
   isModalOpen = false;
+  thisModalOpen = false;
 
   constructor(private navCtrl: NavController) {}
 
@@ -34,6 +35,16 @@ export class LaporKegiatanPage {
   saveReport() {
     // Implement save functionality
     console.log('Report saved');
+    this.closeSavePopup(); // Close the popup
+    this.thisModalOpen = true; // Show success popup
+  }
+
+  closeSaveReport() {
+    this.thisModalOpen = false; // Close success popup
+  }
+
+  cancelSave() {
+    this.closeSavePopup(); // Close the popup
   }
 
   goToTab2() {

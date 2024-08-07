@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [class.blur-background]="isModalOpen">
+<ion-content [class.blur-background]="isModalOpen || thisModalOpen">
   <ion-item lines="none">
     <ion-label position="stacked">Laporan Kegiatan</ion-label>
     <ion-textarea placeholder="Deskripsi"></ion-textarea>
@@ -40,6 +40,16 @@
 
 <ng-container *ngIf="isModalOpen">
   <ion-backdrop (click)="closeSavePopup()"></ion-backdrop>
+  <div class="popup-container">
+    <h2 class="popup-title">Data akan disimpan</h2>
+    <p class="popup-message">Apakah anda setuju untuk menyimpan data ini?</p>
+    <ion-button expand="block" (click)="saveReport()" class="btn-simpan">Simpan</ion-button>
+    <ion-button expand="block" (click)="cancelSave()" class="btn-batal">Batal</ion-button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="thisModalOpen">
+  <ion-backdrop (click)="saveReport()"></ion-backdrop>
   <div class="popup-container">
     <h2 class="popup-title">Berhasil!</h2>
     <img src="assets/img/verified.png" class="popup-icon" alt="Success Icon">
